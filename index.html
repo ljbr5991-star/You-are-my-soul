@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مملكة التاريخ والجغرافيا مع مستر محمد</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #030712;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        .glow-gold {
+            box-shadow: 0 0 50px rgba(245, 158, 11, 0.2);
+        }
+        .card-glow:hover {
+            box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.4);
+            border-color: rgba(245, 158, 11, 0.8);
+            transform: translateY(-6px);
+        }
+        .transition-all-300 {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        .animate-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-gray-950">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-xl border-b border-amber-500/30 px-6 py-4 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg shadow-amber-500/30 bg-gray-800">
+                    <!-- تم تحديث مصدر الصورة هنا -->
+                    <img src="1000000320.webp" alt="مستر محمد" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/100x100/1e293b/f59e0b?text=M.M'">
+                </div>
+                <div>
+                    <span class="text-base md:text-lg font-black bg-gradient-to-r from-amber-400 via-yellow-200 to-orange-400 bg-clip-text text-transparent block leading-tight">
+                        مستر محمد
+                    </span>
+                    <span class="text-xs text-amber-400/80 font-bold tracking-wide">مساعد مستر علي جبر 👑</span>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex space-x-6 space-x-reverse font-semibold text-sm">
+                <a href="#welcome" class="hover:text-amber-400 transition-colors">الرئيسية</a>
+                <a href="#prep-section" class="hover:text-amber-400 transition-colors">المرحلة الإعدادية</a>
+                <a href="#sec-section" class="hover:text-amber-400 transition-colors">المرحلة الثانوية</a>
+                <a href="#eltahyan-section" class="hover:text-amber-400 transition-colors">كتاب الامتحان 📚</a>
+                <a href="#mysteries" class="hover:text-amber-400 transition-colors">أسرار نادرة</a>
+            </nav>
+
+            <a href="https://wa.me/qr/XQS6Y3VDJKUME1" target="_blank" class="bg-gradient-to-r from-emerald-500 to-green-500 text-gray-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg hover:from-emerald-400 hover:to-green-400 transition-all transform hover:scale-105 text-sm flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> تواصل مع مستر محمد
+            </a>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-grow">
+        
+        <!-- قسم الترحيب -->
+        <section id="welcome" class="relative py-24 px-6 text-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-950 to-gray-950 border-b border-gray-900">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] animate-glow"></div>
+            <div class="max-w-4xl mx-auto relative z-10">
+                
+                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-amber-500 mx-auto mb-8 shadow-2xl glow-gold bg-gray-900">
+                    <!-- تم تحديث مصدر الصورة هنا أيضاً -->
+                    <img src="1000000320.webp" alt="مستر محمد" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/200x200/1e293b/f59e0b?text=M.Mohamed'">
+                </div>
+
+                <div class="inline-block bg-amber-500/10 border border-amber-500/30 px-6 py-2 rounded-full text-amber-400 text-sm font-black mb-6">
+                    ✨ ألف سلام التحية والتقدير من مستر محمد (مساعد مستر علي جبر) لكل الأبطال! ✋🔥
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+                    هنا تصنع العقول وتحلل أسرار <span class="bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">التاريخ والجيوبوليتيك العالمي!</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    "التاريخ ليس أرقاماً صماء تحفظ وتنسى، والجغرافيا ليست خطوطاً على ورق، بل هي كواليس صراع الإمبراطوريات، والخرائط السرية التي رسمت مصير العالم!"
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#prep-section" class="bg-amber-500 text-gray-950 font-black px-8 py-4 rounded-2xl shadow-xl hover:bg-amber-400 transition-all-300 transform hover:-translate-y-1">
+                        المرحلة الإعدادية 🎒
+                    </a>
+                    <a href="#sec-section" class="bg-gray-900 border border-amber-500/40 text-amber-300 font-black px-8 py-4 rounded-2xl shadow-xl hover:bg-gray-800 transition-all-300 transform hover:-translate-y-1">
+                        المرحلة الثانوية 🏛️
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- باقي الأقسام كما هي... -->
+
+    </main>
+
+    <!-- سكربتات التبويبات -->
+    <script>
+        function switchPrepTab(tabNum) {
+            document.querySelectorAll('.prep-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-yellow-500', 'text-gray-950');
+                btn.classList.add('bg-gray-900', 'text-gray-300', 'border', 'border-gray-800');
+            });
+            document.getElementById('prep-content-' + tabNum).classList.remove('hidden');
+            const activeBtn = document.getElementById('prep-btn-' + tabNum);
+            activeBtn.classList.remove('bg-gray-900', 'text-gray-300', 'border', 'border-gray-800');
+            activeBtn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-yellow-500', 'text-gray-950');
+        }
+
+        function switchSecTab(tabNum) {
+            document.querySelectorAll('.sec-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.sec-tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-yellow-500', 'text-gray-950');
+                btn.classList.add('bg-gray-900', 'text-gray-300', 'border', 'border-gray-800');
+            });
+            document.getElementById('sec-content-' + tabNum).classList.remove('hidden');
+            const activeBtn = document.getElementById('sec-btn-' + tabNum);
+            activeBtn.classList.remove('bg-gray-900', 'text-gray-300', 'border', 'border-gray-800');
+            activeBtn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-yellow-500', 'text-gray-950');
+        }
+    </script>
+</body>
+</html>
