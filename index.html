@@ -1,217 +1,414 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universe of Us | كوننا</title>
-    <!-- Tailwind CSS for modern responsive styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for romantic icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .glow-text {
-            text-shadow: 0 0 20px rgba(244, 114, 182, 0.6), 0 0 40px rgba(236, 72, 153, 0.4);
-        }
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle var(--duration) infinite ease-in-out;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        .heart-pulse {
-            animation: pulseBeat 2s infinite;
-        }
-        @keyframes pulseBeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار الشخصية مع مستر محمد 😂</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #ff6b6b 100%);
+    background-size: 200% 200%;
+    animation: bgmove 10s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  @keyframes bgmove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  .card {
+    background: #fff;
+    border-radius: 24px;
+    max-width: 480px;
+    width: 100%;
+    padding: 28px 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+  .progress {
+    height: 8px;
+    background: #eee;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,#ff6b6b,#6a11cb);
+    width: 0%;
+    transition: width .4s ease;
+  }
+  .question {
+    font-size: 1.15em;
+    color: #222;
+    margin-bottom: 22px;
+    font-weight: bold;
+    min-height: 60px;
+  }
+  .options button {
+    display: block;
+    width: 100%;
+    background: #f4f4fb;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: right;
+    transition: all .2s;
+    color: #333;
+  }
+  .options button:hover {
+    border-color: #6a11cb;
+    background: #ece6ff;
+    transform: scale(1.02);
+  }
+  .gender-options {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .gender-options button {
+    flex: 1;
+    padding: 22px 10px;
+    font-size: 1.3em;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    background: #f4f4fb;
+    transition: all .2s;
+  }
+  .gender-options button:hover {
+    transform: scale(1.05);
+    background: #ece6ff;
+  }
+  .result-emoji {
+    font-size: 4em;
+    margin-bottom: 6px;
+  }
+  .result-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #6a11cb;
+    margin-bottom: 12px;
+  }
+  .result-text {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .mr-mohamed {
+    background: #fff3f3;
+    border: 2px dashed #ff6b6b;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #c0392b;
+    font-size: 1.1em;
+  }
+  .restart {
+    background: linear-gradient(90deg,#6a11cb,#2575fc);
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .restart:hover { opacity: .9; }
+  .start-emoji { font-size: 3.5em; margin-bottom: 10px; }
+</style>
 </head>
-<body class="relative flex flex-col items-center justify-between min-h-screen p-4 sm:p-6 selection:bg-pink-500 selection:text-white">
-
-    <div id="stars-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
-
-    <header class="relative z-10 w-full max-w-4xl flex justify-between items-center py-4 px-6 glass-panel rounded-2xl shadow-2xl mb-6">
-        <div class="flex items-center space-x-3 space-x-reverse">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center heart-pulse shadow-lg shadow-pink-500/50">
-                <i class="fa-solid fa-heart text-white text-lg"></i>
-            </div>
-            <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent">كوننا (Universe of Us)</span>
-        </div>
-        <div class="text-sm text-pink-300/80 font-semibold hidden sm:block">
-            <i class="fa-solid fa-infinity ml-1"></i> حب بلا حدود
-        </div>
-    </header>
-
-    <main class="relative z-10 w-full max-w-4xl flex-1 flex flex-col items-center justify-center space-y-8 my-auto">
-        
-        <!-- Hero Section -->
-        <section class="glass-panel w-full rounded-3xl p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden border border-white/10">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <h1 class="text-3xl sm:text-5xl font-extrabold mb-6 glow-text leading-tight">
-                إلى أُنس روحي وملاذ قلبي ❤️
-            </h1>
-            <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-                هذا الموقع ليس مجرد صفحات على الإنترنت، بل هو مجرة صغيرة بنيتها خصيصاً لكِ، لتكون مرآة لمدى حبي وعشقي لكل تفصيلة تخصكِ.
-            </p>
-
-            <!-- Interactive Timer -->
-            <div class="mb-8 p-4 rounded-2xl bg-black/30 border border-white/10 inline-block w-full max-w-xl">
-                <div class="text-sm text-pink-400 font-bold mb-2">مدة حبنا وعشقنا الخالد:</div>
-                <div id="love-timer" class="text-lg sm:text-xl font-mono text-purple-200 tracking-wider">جاري حساب نبضات الوقت...</div>
-            </div>
-
-            <!-- Interactive Love Reason Generator -->
-            <div class="mt-4">
-                <button onclick="revealReason()" class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-bold text-lg shadow-xl shadow-pink-500/30 hover:shadow-pink-500/50 transform hover:-translate-y-1 transition-all duration-300 active:translate-y-0 cursor-pointer">
-                    <i class="fa-solid fa-wand-magic-sparkles animate-spin"></i>
-                    <span>لماذا أحبكِ اليوم وكل يوم؟</span>
-                </button>
-                <div id="reason-display" class="mt-6 text-xl sm:text-2xl font-bold text-pink-200 min-h-[70px] flex items-center justify-center transition-all duration-500 px-4">
-                    اضغطي الزر بالأعلى لتكتشفي سراً جديداً من أسرار قلبي ✨
-                </div>
-            </div>
-        </section>
-
-        <!-- Secret Love Notes Grid -->
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-            <div onclick="openNote('ابتسامتك', 'ضحكتك هي النور الوحيد القادر على تبديد أي ظلام يمر بي في يومي، وهي أجمل موسيقى سمعتها.')" class="glass-panel p-6 rounded-2xl text-center cursor-pointer hover:bg-white/10 transition-all border border-white/10 group shadow-lg">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-sun text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-1 text-pink-200">سر ابتسامتك</h3>
-                <p class="text-sm text-gray-400">اضغطي لقراءة الرسالة السرية</p>
-            </div>
-
-            <div onclick="openNote('أماني بوجودك', 'بجانبك أشعر وكأن العالم بأسره أصبح آمناً ومسالماً، وجودك هو الوطن الذي طالما بحثت عنه.')" class="glass-panel p-6 rounded-2xl text-center cursor-pointer hover:bg-white/10 transition-all border border-white/10 group shadow-lg">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-shield-heart text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-1 text-purple-200">الوطن والأمان</h3>
-                <p class="text-sm text-gray-400">اضغطي لقراءة الرسالة السرية</p>
-            </div>
-
-            <div onclick="openNote('مستقبلنا معاَ', 'أحلم بكل ثانية سنقضيها معاً في المستقبل، وكيف سنصنع ذكريات لا تُنسى طوال العمر.')" class="glass-panel p-6 rounded-2xl text-center cursor-pointer hover:bg-white/10 transition-all border border-white/10 group shadow-lg">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-star text-xl"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-1 text-rose-200">أحلامنا المشتركة</h3>
-                <p class="text-sm text-gray-400">اضغطي لقراءة الرسالة السرية</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="relative z-10 w-full max-w-4xl text-center py-6 text-sm text-gray-400 border-t border-white/10 mt-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <div>صُنِع خصيصاً لكِ بكل حب وعشق عارم 🌌</div>
-        <div class="text-pink-400 font-bold">إلى الأبد وحدكِ ❤️</div>
-    </footer>
-
-    <!-- Custom Modal for Notes -->
-    <div id="note-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden p-4">
-        <div class="glass-panel max-w-md w-full p-6 sm:p-8 rounded-3xl border border-pink-500/30 text-center relative shadow-2xl animate-scaleIn">
-            <h3 id="modal-title" class="text-2xl font-bold text-pink-300 mb-4">عنوان الرسالة</h3>
-            <p id="modal-content" class="text-gray-200 leading-relaxed mb-6 text-lg"></p>
-            <button onclick="closeNote()" class="px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition-opacity cursor-pointer">
-                إغلاق الحب ✨
-            </button>
-        </div>
+<body>
+<div class="card" id="card">
+  <!-- المحتوى بيتغير بالجافاسكريبت -->
+</div>
+<script>
+const questionBank = [
+  {
+    q: "أول حاجة... انت مستني حد اتأخر عليك ساعة، تعمل ايه؟",
+    options: [
+      { text: "أتصل عليه 50 مرة وأزعّق", trait: "عصبي" },
+      { text: "أفتح الموبايل وأسليّ نفسي وأستنى بهدوء", trait: "هادئ" },
+      { text: "أمشي وأسيبه، ما ليش نفس", trait: "مزاجي" },
+      { text: "أطلب أكل وأستناه وأنا واكل 😂", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "لو لقيت 100 جنيه في الشارع، تعمل ايه؟",
+    options: [
+      { text: "أدورلها على صاحبها", trait: "طيب" },
+      { text: "أصرفها على أكل فورًا", trait: "استمتاعي" },
+      { text: "أوفرها وما أقولش لحد", trait: "هادئ" },
+      { text: "أشتري بيها هدية لحد بحبه", trait: "طيب" }
+    ]
+  },
+  {
+    q: "صحابك عملوا خروجة وما كلموكش، رد فعلك؟",
+    options: [
+      { text: "أزعل بجد وأقولهم كلمتين", trait: "عصبي" },
+      { text: "أعمل نفسي مش شايف حاجة", trait: "مزاجي" },
+      { text: "أكلمهم بهدوء واسأل ليه", trait: "هادئ" },
+      { text: "أعمل خروجة أحلى من غيرهم وأنساها", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "امتحان بكرة وانت لسه فاتح الكتاب النهاردة، تعمل ايه؟",
+    options: [
+      { text: "أذاكر بسرعة الصاروخ وأدخل بالحظ", trait: "استمتاعي" },
+      { text: "أخد نفس عميق واذاكر بالخطة والتقسيم", trait: "هادئ" },
+      { text: "أعصب على نفسي وأقول ليه مذاكرتش بدري", trait: "عصبي" },
+      { text: "أقرر أذاكر شوية وأنام الباقي، يبقى اللي يبقى", trait: "مزاجي" }
+    ]
+  },
+  {
+    q: "حد زعّلك أوي، بتعمل ايه بعد كده؟",
+    options: [
+      { text: "بفضل زعلان أيام وما بكلمهوش", trait: "مزاجي" },
+      { text: "بواجهه فورًا وأقوله اللي جوايا", trait: "عصبي" },
+      { text: "بستوعب الموضوع وأدي فرصة تانية", trait: "طيب" },
+      { text: "بنسى بسرعة وبكمل حياتي عادي", trait: "هادئ" }
+    ]
+  },
+  {
+    q: "الأكل جالك غلط في المطعم، تعمل ايه؟",
+    options: [
+      { text: "أزعّق للجرسون فورًا", trait: "عصبي" },
+      { text: "أطلب يغيروه بهدوء وأشرح المشكلة", trait: "هادئ" },
+      { text: "أكله زي ما هو، معلش", trait: "طيب" },
+      { text: "أعمل منها موضوع وأتصور وأنزله ستوري 😂", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "لو عندك فلوس هتوفرها، تعمل بيها ايه؟",
+    options: [
+      { text: "أسافر رحلة وأستمتع بيها فورًا", trait: "استمتاعي" },
+      { text: "أحطها في حساب توفير وأنساها", trait: "هادئ" },
+      { text: "أشتري بيها حاجة لأهلي أو أصحابي", trait: "طيب" },
+      { text: "تفضل معايا وبعدين أصرفها فجأة بجنون", trait: "مزاجي" }
+    ]
+  },
+  {
+    q: "حد بيتكلم في حد وانت مش موافق، تعمل ايه؟",
+    options: [
+      { text: "أقاطعه فورًا وأدافع", trait: "عصبي" },
+      { text: "أسيبه يتكلم وأقول رأيي بهدوء بعدين", trait: "هادئ" },
+      { text: "أدافع عن الشخص لو مش موجود", trait: "طيب" },
+      { text: "أغيّر الموضوع لحاجة تضحك", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "يوم إجازتك، بتعمل ايه غالبًا؟",
+    options: [
+      { text: "أخرج وأعمل حاجة جديدة وممتعة", trait: "استمتاعي" },
+      { text: "أقعد لوحدي وأرتاح تمامًا", trait: "هادئ" },
+      { text: "أساعد حد في حاجة يحتاجها", trait: "طيب" },
+      { text: "بيعتمد على مزاجي وقت ما أصحى", trait: "مزاجي" }
+    ]
+  },
+  {
+    q: "لو حد داس عليك في الشارع من غير قصد، رد فعلك؟",
+    options: [
+      { text: "أقوله معلش بس بنبرة متضايقة", trait: "عصبي" },
+      { text: "أبتسم وأقول معلش عادي", trait: "طيب" },
+      { text: "أكمل مشيي وكأن حاجة ما حصلتش", trait: "هادئ" },
+      { text: "أعمل منها موقف كوميدي وأضحك", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "بتحب تقضي وقتك مع مين أكتر؟",
+    options: [
+      { text: "مجموعة كبيرة وصوت عالي وضحك", trait: "استمتاعي" },
+      { text: "صاحب واحد مقرب وكلام هادي", trait: "هادئ" },
+      { text: "العيلة، بحس بالأمان معاهم", trait: "طيب" },
+      { text: "بيتغير حسب مزاجي في اليوم ده", trait: "مزاجي" }
+    ]
+  },
+  {
+    q: "حد طلب منك مساعدة في وقت ضيق، تعمل ايه؟",
+    options: [
+      { text: "أساعده فورًا حتى لو تعبان", trait: "طيب" },
+      { text: "أشرحله إني مش فاضي بس بأسلوب هادي", trait: "هادئ" },
+      { text: "أنرفز لإنه مختار توقيت وحش", trait: "عصبي" },
+      { text: "أساعده وأخليها فرصة نضحك مع بعض", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "اتعملت لك مقلب، رد فعلك ايه؟",
+    options: [
+      { text: "أضحك معاهم وأرد المقلب أحسن", trait: "استمتاعي" },
+      { text: "أعصب شوية بس أسترجع بسرعة", trait: "عصبي" },
+      { text: "أزعل وأفضل ساكت فترة", trait: "مزاجي" },
+      { text: "آخدها بأريحية وأقولهم تسلموا", trait: "هادئ" }
+    ]
+  },
+  {
+    q: "بتاخد قرارات مهمة إزاي عادة؟",
+    options: [
+      { text: "بسرعة وبمشاعري في اللحظة", trait: "مزاجي" },
+      { text: "بعد تفكير طويل ومنطقي", trait: "هادئ" },
+      { text: "بسأل الناس اللي بحبهم قبل ما أقرر", trait: "طيب" },
+      { text: "بختار اللي هيكون فيه متعة أكتر", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "لو الجو وحش وانت طالع من البيت، تعمل ايه؟",
+    options: [
+      { text: "أتنرفز وأقول إحساس اليوم اتقلب", trait: "عصبي" },
+      { text: "آخد شمسية وأكمل يومي عادي", trait: "هادئ" },
+      { text: "أرجع البيت وأعمل حاجة تانية بمزاجي", trait: "مزاجي" },
+      { text: "أستمتع بالجو وأتصور صور حلوة", trait: "استمتاعي" }
+    ]
+  },
+  {
+    q: "حد من عيلتك محتاج وقتك النهاردة، بس عندك خطة، تعمل ايه؟",
+    options: [
+      { text: "ألغي خطتي على طول علشانه", trait: "طيب" },
+      { text: "أوازن بين الاتنين بهدوء", trait: "هادئ" },
+      { text: "أتنرفز لأن خطتي اتبوظت", trait: "عصبي" },
+      { text: "أحول الموقف لحاجة نضحك فيها مع بعض", trait: "استمتاعي" }
+    ]
+  }
+];
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const QUESTIONS_PER_ROUND = 8;
+let questions = [];
+let currentQ = 0;
+let scores = {};
+let gender = null;
+const card = document.getElementById('card');
+function renderStart() {
+  card.innerHTML = `
+    <div class="start-emoji">🧠✨</div>
+    <h1>اختبار الشخصية مع مستر محمد</h1>
+    <p class="subtitle">جاوب على المواقف دي وشوف مستر محمد هيقولك ايه في الآخر 😏</p>
+    <button class="restart" onclick="startQuiz()">ابدأ الاختبار</button>
+  `;
+}
+function startQuiz() {
+  const pool = shuffle(questionBank).slice(0, QUESTIONS_PER_ROUND);
+  questions = pool.map(q => ({ q: q.q, options: shuffle(q.options) }));
+  currentQ = 0;
+  scores = {};
+  gender = null;
+  renderQuestion();
+}
+function renderQuestion() {
+  const q = questions[currentQ];
+  const progressPct = (currentQ / (questions.length + 1)) * 100;
+  card.innerHTML = `
+    <div class="progress"><div class="progress-bar" style="width:${progressPct}%"></div></div>
+    <div class="question">${q.q}</div>
+    <div class="options">
+      ${q.options.map((opt, i) => `<button onclick="answer(${i})">${opt.text}</button>`).join('')}
     </div>
-
-    <script>
-        // Generate Dynamic Starfield Background
-        const starsContainer = document.getElementById('stars-container');
-        const starCount = 60;
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const size = Math.random() * 3 + 1;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
-            star.style.animationDelay = `${Math.random() * 5}s`;
-            starsContainer.appendChild(star);
-        }
-
-        // Reasons to love array
-        const loveReasons = [
-            "بحبك عشان ضحكتك قادرة تنور أظلم وأصعب أيام حياتي.",
-            "بحبك عشان دايماً بتفهميني من نظرة عين واحدة من غير ما أتكلم.",
-            "بحبك لوجودك الدافي جنبي اللي بيحسسني إن الدنيا لسه بخير.",
-            "بحبك عشان إنتي أجمل وأصدق صدفة حصلت في عمري كله.",
-            "بحبك لأن كل تفصيلة فيكي بتخلي قلبي يقع في حبك من أول وجديد.",
-            "بحبك عشان طريقتك في الكلام بتنسيني تعب العالم كله."
-        ];
-
-        let lastIndex = -1;
-        function revealReason() {
-            let randomIndex;
-            do {
-                randomIndex = Math.floor(Math.random() * loveReasons.length);
-            } while (randomIndex === lastIndex);
-            lastIndex = randomIndex;
-
-            const display = document.getElementById('reason-display');
-            display.style.opacity = '0';
-            setTimeout(() => {
-                display.innerText = loveReasons[randomIndex];
-                display.style.opacity = '1';
-            }, 300);
-        }
-
-        // Simulated Love Timer (Starting from a symbolic initial date, e.g., 1 year ago)
-        const startDate = new Date();
-        startDate.setFullYear(startDate.getFullYear() - 1); // Adjust as needed
-        
-        function updateTimer() {
-            const now = new Date();
-            const diff = now - startDate;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / 1000 / 60) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            document.getElementById('love-timer').innerText = 
-                `${days} يوماً : ${hours} ساعة : ${minutes} دقيقة : ${seconds} ثانية`;
-        }
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // Modal functions
-        function openNote(title, content) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-content').innerText = content;
-            document.getElementById('note-modal').classList.remove('hidden');
-        }
-
-        function closeNote() {
-            document.getElementById('note-modal').classList.add('hidden');
-        }
-    </script>
+  `;
+}
+function answer(i) {
+  const trait = questions[currentQ].options[i].trait;
+  scores[trait] = (scores[trait] || 0) + 1;
+  currentQ++;
+  if (currentQ < questions.length) {
+    renderQuestion();
+  } else {
+    renderGenderQuestion();
+  }
+}
+function renderGenderQuestion() {
+  const progressPct = (questions.length / (questions.length + 1)) * 100;
+  card.innerHTML = `
+    <div class="progress"><div class="progress-bar" style="width:${progressPct}%"></div></div>
+    <div class="question">آخر سؤال... انت ولد ولا بنت؟</div>
+    <div class="gender-options">
+      <button onclick="setGender('ولد')">🙋‍♂️ ولد</button>
+      <button onclick="setGender('بنت')">🙋‍♀️ بنت</button>
+    </div>
+  `;
+}
+function setGender(g) {
+  gender = g;
+  renderResult();
+}
+function getTopTrait() {
+  let top = null, max = -1;
+  for (const t in scores) {
+    if (scores[t] > max) { max = scores[t]; top = t; }
+  }
+  return top;
+}
+const traitInfo = {
+  "عصبي": {
+    emoji: "🔥",
+    title: "شخصية نارية",
+    text: "انت شخص عنيف الانفعال شوية، بتاخد الأمور بجدية زيادة وبتتعصب بسرعة. بس الحلو إنك واضح ومباشر، محدش بيتلخبط معاك."
+  },
+  "هادئ": {
+    emoji: "🧘",
+    title: "شخصية هادئة",
+    text: "انت شخص متزن وبتفكر قبل ما ترد فعل. بتاخد الأمور بعقلانية وده بيخليك مصدر راحة للي حواليك."
+  },
+  "مزاجي": {
+    emoji: "🎭",
+    title: "شخصية مزاجية",
+    text: "مزاجك بيتغير بسرعة وبتتأثر بأي حاجة بتحصلك. اللي حواليك لازم يعرفوا يمسكوا التايمنج الصح معاك."
+  },
+  "طيب": {
+    emoji: "💛",
+    title: "شخصية طيبة",
+    text: "قلبك أبيض وبتفكر في اللي حواليك قبل نفسك. الناس بتحبك بسبب طيبتك، بس خد بالك متتستغلش."
+  },
+  "استمتاعي": {
+    emoji: "🎉",
+    title: "شخصية استمتاعية",
+    text: "شعارك في الحياة استمتع دلوقتي وفكر بعدين. بتحول أي موقف لفرصة ضحك واستمتاع، وده بيخفف عن اللي حواليك."
+  }
+};
+function renderResult() {
+  const top = getTopTrait();
+  const info = traitInfo[top];
+  const isBoy = gender === 'ولد';
+  const mrText = isBoy
+    ? "مستر محمد بيقولك: يا ابني انت اهبل 😂🤝"
+    : "مستر محمد بيقولك: يا بنتي انتي هبلة 😂🤝";
+  card.innerHTML = `
+    <div class="result-emoji">${info.emoji}</div>
+    <div class="result-title">${info.title}</div>
+    <div class="result-text">${info.text}</div>
+    <div class="mr-mohamed">${mrText}<br><span style="font-size:0.85em; font-weight:normal;">(الاختبار ده للفشخرة بس، متزعلش 😅)</span></div>
+    <button class="restart" onclick="renderStart()">جرب تاني</button>
+  `;
+}
+renderStart();
+</script>
 </body>
 </html>
-```
