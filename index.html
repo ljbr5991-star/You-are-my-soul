@@ -2,413 +2,689 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اختبار الشخصية مع مستر محمد 😂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>استوديو مستر محمد | لعبة صورتك</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Tahoma', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #ff6b6b 100%);
-    background-size: 200% 200%;
-    animation: bgmove 10s ease infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  @keyframes bgmove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-  .card {
-    background: #fff;
-    border-radius: 24px;
-    max-width: 480px;
-    width: 100%;
-    padding: 28px 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  h1 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 4px;
-  }
-  .subtitle {
-    color: #888;
-    font-size: 0.9em;
-    margin-bottom: 20px;
-  }
-  .progress {
-    height: 8px;
-    background: #eee;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-  .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg,#ff6b6b,#6a11cb);
-    width: 0%;
-    transition: width .4s ease;
-  }
-  .question {
-    font-size: 1.15em;
-    color: #222;
-    margin-bottom: 22px;
-    font-weight: bold;
-    min-height: 60px;
-  }
-  .options button {
-    display: block;
-    width: 100%;
-    background: #f4f4fb;
-    border: 2px solid transparent;
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 12px;
-    font-size: 1em;
-    cursor: pointer;
-    text-align: right;
-    transition: all .2s;
-    color: #333;
-  }
-  .options button:hover {
-    border-color: #6a11cb;
-    background: #ece6ff;
-    transform: scale(1.02);
-  }
-  .gender-options {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .gender-options button {
-    flex: 1;
-    padding: 22px 10px;
-    font-size: 1.3em;
-    border-radius: 16px;
-    border: none;
-    cursor: pointer;
-    background: #f4f4fb;
-    transition: all .2s;
-  }
-  .gender-options button:hover {
-    transform: scale(1.05);
-    background: #ece6ff;
-  }
-  .result-emoji {
-    font-size: 4em;
-    margin-bottom: 6px;
-  }
-  .result-title {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #6a11cb;
-    margin-bottom: 12px;
-  }
-  .result-text {
-    font-size: 1.05em;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-  .mr-mohamed {
-    background: #fff3f3;
-    border: 2px dashed #ff6b6b;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #c0392b;
-    font-size: 1.1em;
-  }
-  .restart {
-    background: linear-gradient(90deg,#6a11cb,#2575fc);
-    color: #fff;
-    border: none;
-    padding: 12px 26px;
-    border-radius: 30px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  .restart:hover { opacity: .9; }
-  .start-emoji { font-size: 3.5em; margin-bottom: 10px; }
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap');
+
+:root{
+  --bg:#140F2B;
+  --bg2:#1C1640;
+  --panel:#211A47;
+  --screen:#0C0920;
+  --pink:#FF3E7F;
+  --violet:#8A5CFF;
+  --gold:#FFC93C;
+  --mint:#3EDBB0;
+  --ink:#F5F3FF;
+  --ink-dim:#B7AEDB;
+  --radius:22px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(circle at 15% 8%, rgba(138,92,255,.35), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(255,62,127,.28), transparent 40%),
+    var(--bg);
+  color:var(--ink);
+  font-family:'Cairo',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+.shell{max-width:760px;margin:0 auto;padding:22px 16px 60px;}
+
+/* ---------- Header / marquee ---------- */
+header{text-align:center;padding:18px 0 10px;}
+.marquee{
+  font-family:'Baloo Bhaijaan 2',sans-serif;
+  font-weight:800;
+  font-size:clamp(28px,7vw,42px);
+  color:var(--ink);
+  letter-spacing:.5px;
+  text-shadow:
+    0 0 6px var(--pink),
+    0 0 18px rgba(255,62,127,.6),
+    0 0 34px rgba(138,92,255,.4);
+  animation:glowpulse 3.2s ease-in-out infinite;
+  margin:0;
+}
+@keyframes glowpulse{
+  0%,100%{text-shadow:0 0 6px var(--pink),0 0 18px rgba(255,62,127,.55),0 0 34px rgba(138,92,255,.35);}
+  50%{text-shadow:0 0 10px var(--gold),0 0 26px rgba(255,201,60,.65),0 0 44px rgba(138,92,255,.5);}
+}
+.tagline{color:var(--ink-dim);font-size:15px;margin-top:8px;font-weight:600;}
+
+/* ---------- Upload dropzone ---------- */
+.dropzone{
+  margin-top:26px;
+  background:linear-gradient(160deg,var(--panel),var(--bg2));
+  border:2px dashed rgba(138,92,255,.5);
+  border-radius:var(--radius);
+  padding:34px 20px;
+  text-align:center;
+  cursor:pointer;
+  transition:border-color .2s, transform .15s;
+  position:relative;
+}
+.dropzone:hover{border-color:var(--pink);}
+.dropzone.dragover{border-color:var(--mint);transform:scale(1.01);}
+.flash-icon{
+  width:64px;height:64px;margin:0 auto 14px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #fff, var(--gold) 60%, var(--pink) 100%);
+  box-shadow:0 0 24px rgba(255,201,60,.6);
+}
+.dropzone h2{font-family:'Baloo Bhaijaan 2',sans-serif;font-size:21px;margin:6px 0;}
+.dropzone p{color:var(--ink-dim);font-size:14px;margin:0;}
+#fileInput{display:none;}
+
+.preview-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;flex-wrap:wrap;}
+.preview-avatar{
+  width:84px;height:84px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--mint);
+  box-shadow:0 0 16px rgba(62,219,176,.55);
+}
+.change-btn{
+  background:none;border:2px solid var(--violet);color:var(--ink);
+  padding:9px 16px;border-radius:999px;font-family:'Cairo';font-weight:700;
+  font-size:13px;cursor:pointer;
+}
+.change-btn:hover{background:var(--violet);}
+
+/* ---------- Arcade tabs ---------- */
+#arcade{margin-top:30px;}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
+.tab-btn{
+  border:none;cursor:pointer;
+  font-family:'Baloo Bhaijaan 2',sans-serif;font-weight:700;font-size:14px;
+  color:#1a1330;
+  padding:12px 16px;border-radius:16px;
+  box-shadow:0 5px 0 rgba(0,0,0,.35), 0 6px 14px rgba(0,0,0,.35);
+  transition:transform .08s, box-shadow .08s;
+  display:flex;align-items:center;gap:8px;
+}
+.tab-btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.35);}
+.tab-btn.active{outline:3px solid var(--ink);outline-offset:2px;}
+.tab-btn.t1{background:var(--pink);color:#2b0416;}
+.tab-btn.t2{background:var(--gold);color:#3a2900;}
+.tab-btn.t3{background:var(--mint);color:#02261f;}
+.tab-btn.t4{background:var(--violet);color:#fff;}
+
+/* ---------- Screen bezel ---------- */
+.bezel{
+  background:linear-gradient(160deg,#2a2158,#181233);
+  border-radius:28px;
+  padding:14px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45), inset 0 0 0 2px rgba(255,255,255,.04);
+}
+.screen{
+  background:var(--screen);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:inset 0 0 30px rgba(0,0,0,.7);
+  min-height:340px;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  gap:12px;
+}
+.game-panel{display:none;width:100%;flex-direction:column;align-items:center;gap:12px;}
+.game-panel.active{display:flex;}
+.game-title{font-family:'Baloo Bhaijaan 2',sans-serif;font-size:19px;margin:2px 0 0;color:var(--ink);}
+.game-hint{color:var(--ink-dim);font-size:12.5px;text-align:center;max-width:320px;margin:-4px 0 4px;}
+.score-row{display:flex;gap:18px;font-weight:800;font-family:'Baloo Bhaijaan 2';font-size:14px;}
+.score-row span{color:var(--gold);}
+.score-row b{color:var(--mint);}
+
+canvas{background:#fff;border-radius:10px;max-width:100%;touch-action:none;}
+
+.action-btn{
+  border:none;cursor:pointer;font-family:'Baloo Bhaijaan 2',sans-serif;
+  font-weight:700;font-size:14px;color:#1a1330;background:var(--mint);
+  padding:10px 20px;border-radius:999px;box-shadow:0 4px 0 rgba(0,0,0,.35);
+}
+.action-btn.secondary{background:var(--violet);color:#fff;}
+.action-btn:active{transform:translateY(3px);box-shadow:none;}
+
+/* ---------- Puzzle ---------- */
+.puzzle-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  width:288px;height:288px;max-width:80vw;max-height:80vw;
+  gap:3px;background:#000;border-radius:10px;overflow:hidden;
+}
+.puzzle-tile{
+  background-size:400% 400%;
+  cursor:pointer;
+}
+.puzzle-tile.blank{background:var(--screen);cursor:default;}
+.puzzle-win{color:var(--gold);font-family:'Baloo Bhaijaan 2';font-weight:800;font-size:18px;text-align:center;}
+
+/* ---------- Filters studio ---------- */
+.filter-swatches{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:320px;}
+.swatch{
+  width:52px;height:52px;border-radius:12px;background-size:cover;background-position:center;
+  cursor:pointer;border:2px solid transparent;
+}
+.swatch.active{border-color:var(--gold);}
+.swatch-label{font-size:10px;text-align:center;color:var(--ink-dim);margin-top:2px;}
+.swatch-wrap{display:flex;flex-direction:column;align-items:center;}
+
+/* ---------- Footer ---------- */
+footer{text-align:center;margin-top:34px;color:var(--ink-dim);font-size:13px;}
+footer b{color:var(--pink);font-family:'Baloo Bhaijaan 2';}
+
+@media (max-width:420px){
+  .tab-btn{font-size:12.5px;padding:10px 12px;}
+}
 </style>
 </head>
 <body>
-<div class="card" id="card">
-  <!-- المحتوى بيتغير بالجافاسكريبت -->
+<div class="shell">
+
+  <header>
+    <p class="marquee">استوديو مستر محمد</p>
+    <p class="tagline">ارفع صورتك.. وحوّلها لبطلة أربع ألعاب مختلفة 🎮✨</p>
+  </header>
+
+  <div class="dropzone" id="dropzone">
+    <div class="flash-icon"></div>
+    <h2 id="dzTitle">اضغط هنا أو اسحب صورتك</h2>
+    <p>PNG أو JPG — الصورة بتفضل في متصفحك بس، مفيش رفع لأي سيرفر</p>
+    <input type="file" id="fileInput" accept="image/*">
+  </div>
+
+  <div class="preview-row" id="previewRow" style="display:none;">
+    <img id="previewAvatar" class="preview-avatar" alt="صورتك">
+    <button class="change-btn" id="changeBtn">غيّر الصورة</button>
+  </div>
+
+  <section id="arcade" hidden>
+    <div class="tabs">
+      <button class="tab-btn t1 active" data-game="puzzle">🧩 بازل الصورة</button>
+      <button class="tab-btn t2" data-game="flappy">🕊️ طيران الوش</button>
+      <button class="tab-btn t3" data-game="catch">⭐ صيد النجوم</button>
+      <button class="tab-btn t4" data-game="filters">🎨 استوديو الفلاتر</button>
+    </div>
+
+    <div class="bezel">
+      <div class="screen">
+
+        <!-- PUZZLE -->
+        <div class="game-panel active" id="panel-puzzle">
+          <h3 class="game-title">🧩 بازل الصورة</h3>
+          <p class="game-hint">اضغط على أي قطعة جنب المكان الفاضي عشان تحركها. رتّب الصورة زي ما كانت!</p>
+          <div class="score-row">الحركات: <span id="puzzleMoves">0</span></div>
+          <div class="puzzle-grid" id="puzzleGrid"></div>
+          <div class="puzzle-win" id="puzzleWin" style="display:none;">🎉 برافو! رجّعت الصورة زي ما كانت!</div>
+          <button class="action-btn" id="puzzleShuffle">اخلط من جديد</button>
+        </div>
+
+        <!-- FLAPPY -->
+        <div class="game-panel" id="panel-flappy">
+          <h3 class="game-title">🕊️ طيران الوش</h3>
+          <p class="game-hint">دوس / اضغط سبيس عشان توشك يطير ويعدي بين الأعمدة من غير ما يلمسها</p>
+          <div class="score-row">النقاط: <span id="flappyScore">0</span> — أعلى نتيجة: <b id="flappyBest">0</b></div>
+          <canvas id="flappyCanvas" width="320" height="420"></canvas>
+          <button class="action-btn" id="flappyStart">ابدأ اللعب</button>
+        </div>
+
+        <!-- CATCH -->
+        <div class="game-panel" id="panel-catch">
+          <h3 class="game-title">⭐ صيد النجوم</h3>
+          <p class="game-hint">حرّك وشك بإصبعك أو بالسهام يمين/شمال عشان تمسك النجوم وتتفادى القنابل 💣</p>
+          <div class="score-row">النقاط: <span id="catchScore">0</span> — الأرواح: <b id="catchLives">3</b></div>
+          <canvas id="catchCanvas" width="320" height="420"></canvas>
+          <button class="action-btn" id="catchStart">ابدأ اللعب</button>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="game-panel" id="panel-filters">
+          <h3 class="game-title">🎨 استوديو الفلاتر</h3>
+          <p class="game-hint">جرّب فلاتر مختلفة على صورتك ونزّلها بعد ما تعجبك</p>
+          <canvas id="filterCanvas" width="300" height="300"></canvas>
+          <div class="filter-swatches" id="filterSwatches"></div>
+          <button class="action-btn" id="filterDownload">حمّل الصورة</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>تصميم <b>مستر محمد</b> — استوديو الصور اللي بيلعب معاك 🎮</footer>
 </div>
+
 <script>
-const questionBank = [
-  {
-    q: "أول حاجة... انت مستني حد اتأخر عليك ساعة، تعمل ايه؟",
-    options: [
-      { text: "أتصل عليه 50 مرة وأزعّق", trait: "عصبي" },
-      { text: "أفتح الموبايل وأسليّ نفسي وأستنى بهدوء", trait: "هادئ" },
-      { text: "أمشي وأسيبه، ما ليش نفس", trait: "مزاجي" },
-      { text: "أطلب أكل وأستناه وأنا واكل 😂", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "لو لقيت 100 جنيه في الشارع، تعمل ايه؟",
-    options: [
-      { text: "أدورلها على صاحبها", trait: "طيب" },
-      { text: "أصرفها على أكل فورًا", trait: "استمتاعي" },
-      { text: "أوفرها وما أقولش لحد", trait: "هادئ" },
-      { text: "أشتري بيها هدية لحد بحبه", trait: "طيب" }
-    ]
-  },
-  {
-    q: "صحابك عملوا خروجة وما كلموكش، رد فعلك؟",
-    options: [
-      { text: "أزعل بجد وأقولهم كلمتين", trait: "عصبي" },
-      { text: "أعمل نفسي مش شايف حاجة", trait: "مزاجي" },
-      { text: "أكلمهم بهدوء واسأل ليه", trait: "هادئ" },
-      { text: "أعمل خروجة أحلى من غيرهم وأنساها", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "امتحان بكرة وانت لسه فاتح الكتاب النهاردة، تعمل ايه؟",
-    options: [
-      { text: "أذاكر بسرعة الصاروخ وأدخل بالحظ", trait: "استمتاعي" },
-      { text: "أخد نفس عميق واذاكر بالخطة والتقسيم", trait: "هادئ" },
-      { text: "أعصب على نفسي وأقول ليه مذاكرتش بدري", trait: "عصبي" },
-      { text: "أقرر أذاكر شوية وأنام الباقي، يبقى اللي يبقى", trait: "مزاجي" }
-    ]
-  },
-  {
-    q: "حد زعّلك أوي، بتعمل ايه بعد كده؟",
-    options: [
-      { text: "بفضل زعلان أيام وما بكلمهوش", trait: "مزاجي" },
-      { text: "بواجهه فورًا وأقوله اللي جوايا", trait: "عصبي" },
-      { text: "بستوعب الموضوع وأدي فرصة تانية", trait: "طيب" },
-      { text: "بنسى بسرعة وبكمل حياتي عادي", trait: "هادئ" }
-    ]
-  },
-  {
-    q: "الأكل جالك غلط في المطعم، تعمل ايه؟",
-    options: [
-      { text: "أزعّق للجرسون فورًا", trait: "عصبي" },
-      { text: "أطلب يغيروه بهدوء وأشرح المشكلة", trait: "هادئ" },
-      { text: "أكله زي ما هو، معلش", trait: "طيب" },
-      { text: "أعمل منها موضوع وأتصور وأنزله ستوري 😂", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "لو عندك فلوس هتوفرها، تعمل بيها ايه؟",
-    options: [
-      { text: "أسافر رحلة وأستمتع بيها فورًا", trait: "استمتاعي" },
-      { text: "أحطها في حساب توفير وأنساها", trait: "هادئ" },
-      { text: "أشتري بيها حاجة لأهلي أو أصحابي", trait: "طيب" },
-      { text: "تفضل معايا وبعدين أصرفها فجأة بجنون", trait: "مزاجي" }
-    ]
-  },
-  {
-    q: "حد بيتكلم في حد وانت مش موافق، تعمل ايه؟",
-    options: [
-      { text: "أقاطعه فورًا وأدافع", trait: "عصبي" },
-      { text: "أسيبه يتكلم وأقول رأيي بهدوء بعدين", trait: "هادئ" },
-      { text: "أدافع عن الشخص لو مش موجود", trait: "طيب" },
-      { text: "أغيّر الموضوع لحاجة تضحك", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "يوم إجازتك، بتعمل ايه غالبًا؟",
-    options: [
-      { text: "أخرج وأعمل حاجة جديدة وممتعة", trait: "استمتاعي" },
-      { text: "أقعد لوحدي وأرتاح تمامًا", trait: "هادئ" },
-      { text: "أساعد حد في حاجة يحتاجها", trait: "طيب" },
-      { text: "بيعتمد على مزاجي وقت ما أصحى", trait: "مزاجي" }
-    ]
-  },
-  {
-    q: "لو حد داس عليك في الشارع من غير قصد، رد فعلك؟",
-    options: [
-      { text: "أقوله معلش بس بنبرة متضايقة", trait: "عصبي" },
-      { text: "أبتسم وأقول معلش عادي", trait: "طيب" },
-      { text: "أكمل مشيي وكأن حاجة ما حصلتش", trait: "هادئ" },
-      { text: "أعمل منها موقف كوميدي وأضحك", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "بتحب تقضي وقتك مع مين أكتر؟",
-    options: [
-      { text: "مجموعة كبيرة وصوت عالي وضحك", trait: "استمتاعي" },
-      { text: "صاحب واحد مقرب وكلام هادي", trait: "هادئ" },
-      { text: "العيلة، بحس بالأمان معاهم", trait: "طيب" },
-      { text: "بيتغير حسب مزاجي في اليوم ده", trait: "مزاجي" }
-    ]
-  },
-  {
-    q: "حد طلب منك مساعدة في وقت ضيق، تعمل ايه؟",
-    options: [
-      { text: "أساعده فورًا حتى لو تعبان", trait: "طيب" },
-      { text: "أشرحله إني مش فاضي بس بأسلوب هادي", trait: "هادئ" },
-      { text: "أنرفز لإنه مختار توقيت وحش", trait: "عصبي" },
-      { text: "أساعده وأخليها فرصة نضحك مع بعض", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "اتعملت لك مقلب، رد فعلك ايه؟",
-    options: [
-      { text: "أضحك معاهم وأرد المقلب أحسن", trait: "استمتاعي" },
-      { text: "أعصب شوية بس أسترجع بسرعة", trait: "عصبي" },
-      { text: "أزعل وأفضل ساكت فترة", trait: "مزاجي" },
-      { text: "آخدها بأريحية وأقولهم تسلموا", trait: "هادئ" }
-    ]
-  },
-  {
-    q: "بتاخد قرارات مهمة إزاي عادة؟",
-    options: [
-      { text: "بسرعة وبمشاعري في اللحظة", trait: "مزاجي" },
-      { text: "بعد تفكير طويل ومنطقي", trait: "هادئ" },
-      { text: "بسأل الناس اللي بحبهم قبل ما أقرر", trait: "طيب" },
-      { text: "بختار اللي هيكون فيه متعة أكتر", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "لو الجو وحش وانت طالع من البيت، تعمل ايه؟",
-    options: [
-      { text: "أتنرفز وأقول إحساس اليوم اتقلب", trait: "عصبي" },
-      { text: "آخد شمسية وأكمل يومي عادي", trait: "هادئ" },
-      { text: "أرجع البيت وأعمل حاجة تانية بمزاجي", trait: "مزاجي" },
-      { text: "أستمتع بالجو وأتصور صور حلوة", trait: "استمتاعي" }
-    ]
-  },
-  {
-    q: "حد من عيلتك محتاج وقتك النهاردة، بس عندك خطة، تعمل ايه؟",
-    options: [
-      { text: "ألغي خطتي على طول علشانه", trait: "طيب" },
-      { text: "أوازن بين الاتنين بهدوء", trait: "هادئ" },
-      { text: "أتنرفز لأن خطتي اتبوظت", trait: "عصبي" },
-      { text: "أحول الموقف لحاجة نضحك فيها مع بعض", trait: "استمتاعي" }
-    ]
+/* ======================= SHARED STATE ======================= */
+let userImage = null;   // HTMLImageElement of uploaded photo
+let avatarCircleSmall = null; // circular-cropped canvas, small, for game sprites
+
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const previewRow = document.getElementById('previewRow');
+const previewAvatar = document.getElementById('previewAvatar');
+const changeBtn = document.getElementById('changeBtn');
+const arcadeSection = document.getElementById('arcade');
+const dzTitle = document.getElementById('dzTitle');
+
+dropzone.addEventListener('click', ()=> fileInput.click());
+dropzone.addEventListener('dragover', e=>{e.preventDefault(); dropzone.classList.add('dragover');});
+dropzone.addEventListener('dragleave', ()=> dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', e=>{
+  e.preventDefault(); dropzone.classList.remove('dragover');
+  if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e=>{
+  if(e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+});
+changeBtn.addEventListener('click', ()=> fileInput.click());
+
+function handleFile(file){
+  if(!file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = (ev)=>{
+    const img = new Image();
+    img.onload = ()=>{
+      userImage = img;
+      onImageReady();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function makeCircularAvatar(img, size){
+  const c = document.createElement('canvas');
+  c.width = size; c.height = size;
+  const ctx = c.getContext('2d');
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(size/2, size/2, size/2, 0, Math.PI*2);
+  ctx.closePath();
+  ctx.clip();
+  // cover-fit draw
+  const ratio = Math.max(size/img.width, size/img.height);
+  const w = img.width*ratio, h = img.height*ratio;
+  ctx.drawImage(img, (size-w)/2, (size-h)/2, w, h);
+  ctx.restore();
+  return c;
+}
+
+function onImageReady(){
+  previewAvatar.src = userImage.src;
+  previewRow.style.display = 'flex';
+  dzTitle.textContent = 'صورتك جاهزة! تقدر تغيّرها من هنا';
+  arcadeSection.hidden = false;
+  avatarCircleSmall = makeCircularAvatar(userImage, 120);
+
+  buildPuzzle();
+  setupFilters();
+  resetFlappy(false);
+  resetCatch(false);
+  arcadeSection.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ======================= TABS ======================= */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.game-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-'+btn.dataset.game).classList.add('active');
+  });
+});
+
+/* ======================= PUZZLE GAME ======================= */
+const GRID = 4;
+let board = [];       // board[position] = tileId (0..14, 15 = blank)
+let blankPos = 15;
+let moveCount = 0;
+const puzzleGrid = document.getElementById('puzzleGrid');
+const puzzleMovesEl = document.getElementById('puzzleMoves');
+const puzzleWinEl = document.getElementById('puzzleWin');
+
+function buildPuzzle(){
+  board = [...Array(16).keys()];
+  blankPos = 15;
+  moveCount = 0;
+  puzzleMovesEl.textContent = '0';
+  puzzleWinEl.style.display = 'none';
+  shufflePuzzle();
+  renderPuzzle();
+}
+
+function shufflePuzzle(){
+  for(let i=0;i<250;i++){
+    const neighbors = getNeighbors(blankPos);
+    const swapWith = neighbors[Math.floor(Math.random()*neighbors.length)];
+    swapTiles(swapWith, blankPos);
   }
+  moveCount = 0;
+  puzzleMovesEl.textContent = '0';
+  puzzleWinEl.style.display = 'none';
+}
+
+function getNeighbors(pos){
+  const row = Math.floor(pos/GRID), col = pos%GRID;
+  const list = [];
+  if(row>0) list.push(pos-GRID);
+  if(row<GRID-1) list.push(pos+GRID);
+  if(col>0) list.push(pos-1);
+  if(col<GRID-1) list.push(pos+1);
+  return list;
+}
+function swapTiles(a,b){
+  const tmp = board[a]; board[a]=board[b]; board[b]=tmp;
+  if(board[a]===15) blankPos=a;
+  if(board[b]===15) blankPos=b;
+}
+
+function renderPuzzle(){
+  puzzleGrid.innerHTML = '';
+  for(let pos=0; pos<16; pos++){
+    const tileId = board[pos];
+    const div = document.createElement('div');
+    div.className = 'puzzle-tile' + (tileId===15 ? ' blank' : '');
+    if(tileId!==15){
+      const col = tileId % GRID, row = Math.floor(tileId/GRID);
+      div.style.backgroundImage = `url(${userImage.src})`;
+      div.style.backgroundPosition = `${col*(100/(GRID-1))}% ${row*(100/(GRID-1))}%`;
+      div.addEventListener('click', ()=> tryMove(pos));
+    }
+    puzzleGrid.appendChild(div);
+  }
+}
+
+function tryMove(pos){
+  if(getNeighbors(blankPos).includes(pos)){
+    swapTiles(pos, blankPos);
+    moveCount++;
+    puzzleMovesEl.textContent = moveCount;
+    renderPuzzle();
+    checkWin();
+  }
+}
+function checkWin(){
+  const won = board.every((v,i)=> v===i);
+  puzzleWinEl.style.display = won ? 'block' : 'none';
+}
+document.getElementById('puzzleShuffle').addEventListener('click', ()=>{
+  shufflePuzzle(); renderPuzzle();
+});
+
+/* ======================= FLAPPY (face flying) ======================= */
+const flappyCanvas = document.getElementById('flappyCanvas');
+const fctx = flappyCanvas.getContext('2d');
+let flappy = {};
+let flappyBest = parseInt(localStorage_safe_get()) || 0;
+document.getElementById('flappyBest').textContent = flappyBest;
+
+function localStorage_safe_get(){ return 0; } // no persistent storage used, session only
+
+function resetFlappy(){
+  flappy = {
+    y: 200, vy: 0, radius: 20,
+    pipes: [], frame: 0, running:false, over:false,
+    score:0, gravity:0.5, flap:-8
+  };
+  document.getElementById('flappyScore').textContent = '0';
+  drawFlappyIdle();
+}
+function drawFlappyIdle(){
+  fctx.clearRect(0,0,flappyCanvas.width,flappyCanvas.height);
+  bgSky(fctx, flappyCanvas.width, flappyCanvas.height);
+  drawBird();
+  fctx.fillStyle = 'rgba(0,0,0,.55)';
+  fctx.font = '16px Cairo, sans-serif';
+  fctx.textAlign = 'center';
+  fctx.fillStyle = '#12102b';
+  fctx.font = 'bold 15px Cairo, sans-serif';
+  fctx.fillText('دوس "ابدأ اللعب" أو اضغط الشاشة', flappyCanvas.width/2, 40);
+}
+function bgSky(ctx,w,h){
+  const g = ctx.createLinearGradient(0,0,0,h);
+  g.addColorStop(0,'#8fd3ff'); g.addColorStop(1,'#eaf7ff');
+  ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+}
+function drawBird(){
+  if(!avatarCircleSmall) return;
+  fctx.save();
+  fctx.translate(70, flappy.y);
+  const angle = Math.max(-0.4, Math.min(0.9, flappy.vy/12));
+  fctx.rotate(angle);
+  fctx.drawImage(avatarCircleSmall, -flappy.radius, -flappy.radius, flappy.radius*2, flappy.radius*2);
+  fctx.restore();
+}
+function flapAction(){
+  if(!flappy.running && !flappy.over){ startFlappy(); return; }
+  if(flappy.over){ resetFlappy(); return; }
+  flappy.vy = flappy.flap;
+}
+document.getElementById('flappyStart').addEventListener('click', flapAction);
+flappyCanvas.addEventListener('mousedown', flapAction);
+flappyCanvas.addEventListener('touchstart', e=>{e.preventDefault(); flapAction();});
+document.addEventListener('keydown', e=>{
+  if(e.code==='Space' && document.getElementById('panel-flappy').classList.contains('active')) flapAction();
+});
+
+function startFlappy(){
+  flappy.running = true; flappy.over=false; flappy.pipes=[]; flappy.frame=0; flappy.score=0;
+  flappy.y = 200; flappy.vy=0;
+  requestAnimationFrame(flappyLoop);
+}
+function flappyLoop(){
+  if(!flappy.running) return;
+  flappy.frame++;
+  flappy.vy += flappy.gravity;
+  flappy.y += flappy.vy;
+
+  if(flappy.frame % 90 === 0){
+    const gapY = 60 + Math.random()*(flappyCanvas.height-180);
+    flappy.pipes.push({x: flappyCanvas.width+30, gapY, passed:false});
+  }
+  flappy.pipes.forEach(p=> p.x -= 3);
+  flappy.pipes = flappy.pipes.filter(p=> p.x > -60);
+
+  // collision & scoring
+  const bx=70, br=flappy.radius;
+  flappy.pipes.forEach(p=>{
+    if(!p.passed && p.x+30 < bx){
+      p.passed = true; flappy.score++;
+      document.getElementById('flappyScore').textContent = flappy.score;
+    }
+    const gapTop = p.gapY-55, gapBottom = p.gapY+55;
+    if(bx+br > p.x && bx-br < p.x+56){
+      if(flappy.y-br < gapTop || flappy.y+br > gapBottom) endFlappy();
+    }
+  });
+  if(flappy.y+flappy.radius > flappyCanvas.height || flappy.y-flappy.radius < 0) endFlappy();
+
+  // draw
+  bgSky(fctx, flappyCanvas.width, flappyCanvas.height);
+  fctx.fillStyle = '#3EDBB0';
+  flappy.pipes.forEach(p=>{
+    const gapTop = p.gapY-55, gapBottom = p.gapY+55;
+    fctx.fillRect(p.x, 0, 30, gapTop);
+    fctx.fillRect(p.x, gapBottom, 30, flappyCanvas.height-gapBottom);
+  });
+  drawBird();
+  fctx.fillStyle = '#12102b'; fctx.font='bold 20px Cairo, sans-serif'; fctx.textAlign='center';
+  fctx.fillText(flappy.score, flappyCanvas.width/2, 34);
+
+  if(flappy.running) requestAnimationFrame(flappyLoop);
+}
+function endFlappy(){
+  flappy.running = false; flappy.over = true;
+  if(flappy.score > flappyBest){ flappyBest = flappy.score; document.getElementById('flappyBest').textContent = flappyBest; }
+  fctx.fillStyle = 'rgba(0,0,0,.5)';
+  fctx.fillRect(0,0,flappyCanvas.width,flappyCanvas.height);
+  fctx.fillStyle = '#fff'; fctx.font='bold 22px Cairo, sans-serif'; fctx.textAlign='center';
+  fctx.fillText('خسرت! دوس تاني تلعب', flappyCanvas.width/2, flappyCanvas.height/2);
+}
+
+/* ======================= CATCH GAME ======================= */
+const catchCanvas = document.getElementById('catchCanvas');
+const cctx = catchCanvas.getContext('2d');
+let catchGame = {};
+
+function resetCatch(){
+  catchGame = {
+    playerX: catchCanvas.width/2, playerR:26,
+    items:[], running:false, over:false, score:0, lives:3, frame:0, speed:2.2
+  };
+  document.getElementById('catchScore').textContent='0';
+  document.getElementById('catchLives').textContent='3';
+  drawCatchIdle();
+}
+function drawCatchIdle(){
+  cctx.clearRect(0,0,catchCanvas.width,catchCanvas.height);
+  bgNight(cctx, catchCanvas.width, catchCanvas.height);
+  drawPlayer();
+  cctx.fillStyle='#fff'; cctx.font='bold 15px Cairo, sans-serif'; cctx.textAlign='center';
+  cctx.fillText('دوس "ابدأ اللعب" وحرك وشك', catchCanvas.width/2, 40);
+}
+function bgNight(ctx,w,h){
+  const g = ctx.createLinearGradient(0,0,0,h);
+  g.addColorStop(0,'#241a4d'); g.addColorStop(1,'#0d0a20');
+  ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+}
+function drawPlayer(){
+  if(!avatarCircleSmall) return;
+  cctx.drawImage(avatarCircleSmall, catchGame.playerX-catchGame.playerR, catchCanvas.height-60, catchGame.playerR*2, catchGame.playerR*2);
+}
+document.getElementById('catchStart').addEventListener('click', ()=>{
+  if(!catchGame.running){ catchGame.running=true; catchGame.over=false; catchGame.items=[]; catchGame.score=0; catchGame.lives=3; catchGame.frame=0; catchGame.speed=2.2;
+    document.getElementById('catchScore').textContent='0';
+    document.getElementById('catchLives').textContent='3';
+    requestAnimationFrame(catchLoop);
+  }
+});
+function movePlayerTo(clientX){
+  const rect = catchCanvas.getBoundingClientRect();
+  const scale = catchCanvas.width/rect.width;
+  let x = (clientX - rect.left)*scale;
+  x = Math.max(catchGame.playerR, Math.min(catchCanvas.width-catchGame.playerR, x));
+  catchGame.playerX = x;
+}
+catchCanvas.addEventListener('mousemove', e=> movePlayerTo(e.clientX));
+catchCanvas.addEventListener('touchmove', e=>{ e.preventDefault(); movePlayerTo(e.touches[0].clientX); });
+document.addEventListener('keydown', e=>{
+  if(!document.getElementById('panel-catch').classList.contains('active')) return;
+  if(e.code==='ArrowLeft') catchGame.playerX = Math.max(catchGame.playerR, catchGame.playerX-20);
+  if(e.code==='ArrowRight') catchGame.playerX = Math.min(catchCanvas.width-catchGame.playerR, catchGame.playerX+20);
+});
+
+function catchLoop(){
+  if(!catchGame.running) return;
+  catchGame.frame++;
+  if(catchGame.frame % 45 === 0){
+    catchGame.items.push({
+      x: 20+Math.random()*(catchCanvas.width-40), y:-20,
+      isBomb: Math.random()<0.28, r:16
+    });
+    catchGame.speed += 0.03;
+  }
+  catchGame.items.forEach(it=> it.y += catchGame.speed);
+
+  // collision
+  catchGame.items.forEach(it=>{
+    if(!it.done){
+      const dx = it.x-catchGame.playerX, dy = it.y-(catchCanvas.height-30);
+      if(Math.sqrt(dx*dx+dy*dy) < it.r+catchGame.playerR-8){
+        it.done = true;
+        if(it.isBomb){ catchGame.lives--; document.getElementById('catchLives').textContent = catchGame.lives; }
+        else { catchGame.score++; document.getElementById('catchScore').textContent = catchGame.score; }
+      }
+    }
+  });
+  catchGame.items = catchGame.items.filter(it=> !it.done && it.y < catchCanvas.height+30);
+
+  if(catchGame.lives<=0) endCatch();
+
+  bgNight(cctx, catchCanvas.width, catchCanvas.height);
+  catchGame.items.forEach(it=>{
+    cctx.font = (it.r*2)+'px serif'; cctx.textAlign='center'; cctx.textBaseline='middle';
+    cctx.fillText(it.isBomb ? '💣' : '⭐', it.x, it.y);
+  });
+  drawPlayer();
+  cctx.fillStyle='#fff'; cctx.font='bold 16px Cairo, sans-serif'; cctx.textAlign='center'; cctx.textBaseline='alphabetic';
+  cctx.fillText('النقاط: '+catchGame.score, catchCanvas.width/2, 26);
+
+  if(catchGame.running) requestAnimationFrame(catchLoop);
+}
+function endCatch(){
+  catchGame.running=false; catchGame.over=true;
+  cctx.fillStyle='rgba(0,0,0,.55)'; cctx.fillRect(0,0,catchCanvas.width,catchCanvas.height);
+  cctx.fillStyle='#fff'; cctx.font='bold 20px Cairo, sans-serif'; cctx.textAlign='center';
+  cctx.fillText('خلصت أرواحك! نقاطك: '+catchGame.score, catchCanvas.width/2, catchCanvas.height/2-10);
+  cctx.font='15px Cairo, sans-serif';
+  cctx.fillText('دوس ابدأ اللعب تاني', catchCanvas.width/2, catchCanvas.height/2+20);
+}
+
+/* ======================= FILTER STUDIO ======================= */
+const filterCanvas = document.getElementById('filterCanvas');
+const filctx = filterCanvas.getContext('2d');
+const filterSwatches = document.getElementById('filterSwatches');
+let currentFilter = 'none';
+
+const FILTERS = [
+  {id:'none', label:'الأصلي', css:'none'},
+  {id:'gray', label:'أبيض وأسود', css:'grayscale(1) contrast(1.05)'},
+  {id:'sepia', label:'قديم', css:'sepia(0.85) contrast(1.05)'},
+  {id:'invert', label:'معكوس', css:'invert(1)'},
+  {id:'neon', label:'نيون', css:'saturate(2.6) contrast(1.3) hue-rotate(300deg)'},
+  {id:'dream', label:'حلم', css:'brightness(1.15) saturate(1.4) blur(1px)'},
+  {id:'pixel', label:'بكسل', css:'pixel'},
+  {id:'comic', label:'كوميك', css:'contrast(1.6) saturate(1.8) brightness(1.05)'}
 ];
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+
+function setupFilters(){
+  filterSwatches.innerHTML = '';
+  FILTERS.forEach(f=>{
+    const wrap = document.createElement('div');
+    wrap.className='swatch-wrap';
+    const sw = document.createElement('div');
+    sw.className='swatch'+(f.id===currentFilter?' active':'');
+    sw.style.backgroundImage = `url(${userImage.src})`;
+    sw.style.filter = f.css==='pixel' ? 'none' : f.css;
+    sw.dataset.id = f.id;
+    sw.addEventListener('click', ()=>{ currentFilter=f.id; applyFilter(); refreshSwatchActive(); });
+    const label = document.createElement('div');
+    label.className='swatch-label'; label.textContent = f.label;
+    wrap.appendChild(sw); wrap.appendChild(label);
+    filterSwatches.appendChild(wrap);
+  });
+  applyFilter();
 }
-const QUESTIONS_PER_ROUND = 8;
-let questions = [];
-let currentQ = 0;
-let scores = {};
-let gender = null;
-const card = document.getElementById('card');
-function renderStart() {
-  card.innerHTML = `
-    <div class="start-emoji">🧠✨</div>
-    <h1>اختبار الشخصية مع مستر محمد</h1>
-    <p class="subtitle">جاوب على المواقف دي وشوف مستر محمد هيقولك ايه في الآخر 😏</p>
-    <button class="restart" onclick="startQuiz()">ابدأ الاختبار</button>
-  `;
+function refreshSwatchActive(){
+  document.querySelectorAll('.swatch').forEach(s=> s.classList.toggle('active', s.dataset.id===currentFilter));
 }
-function startQuiz() {
-  const pool = shuffle(questionBank).slice(0, QUESTIONS_PER_ROUND);
-  questions = pool.map(q => ({ q: q.q, options: shuffle(q.options) }));
-  currentQ = 0;
-  scores = {};
-  gender = null;
-  renderQuestion();
-}
-function renderQuestion() {
-  const q = questions[currentQ];
-  const progressPct = (currentQ / (questions.length + 1)) * 100;
-  card.innerHTML = `
-    <div class="progress"><div class="progress-bar" style="width:${progressPct}%"></div></div>
-    <div class="question">${q.q}</div>
-    <div class="options">
-      ${q.options.map((opt, i) => `<button onclick="answer(${i})">${opt.text}</button>`).join('')}
-    </div>
-  `;
-}
-function answer(i) {
-  const trait = questions[currentQ].options[i].trait;
-  scores[trait] = (scores[trait] || 0) + 1;
-  currentQ++;
-  if (currentQ < questions.length) {
-    renderQuestion();
+function applyFilter(){
+  const f = FILTERS.find(x=>x.id===currentFilter);
+  const size = 300;
+  filctx.clearRect(0,0,size,size);
+  const ratio = Math.max(size/userImage.width, size/userImage.height);
+  const w = userImage.width*ratio, h = userImage.height*ratio;
+
+  if(f.css==='pixel'){
+    const small = document.createElement('canvas');
+    const pxSize = 24;
+    small.width = pxSize; small.height = pxSize;
+    const sctx = small.getContext('2d');
+    sctx.drawImage(userImage, (0), (0), userImage.width, userImage.height, 0,0,pxSize,pxSize);
+    filctx.imageSmoothingEnabled = false;
+    filctx.drawImage(small, 0,0,pxSize,pxSize, (size-w)/2,(size-h)/2, w, h);
+    filctx.imageSmoothingEnabled = true;
   } else {
-    renderGenderQuestion();
+    filctx.filter = f.css;
+    filctx.drawImage(userImage, (size-w)/2, (size-h)/2, w, h);
+    filctx.filter = 'none';
   }
 }
-function renderGenderQuestion() {
-  const progressPct = (questions.length / (questions.length + 1)) * 100;
-  card.innerHTML = `
-    <div class="progress"><div class="progress-bar" style="width:${progressPct}%"></div></div>
-    <div class="question">آخر سؤال... انت ولد ولا بنت؟</div>
-    <div class="gender-options">
-      <button onclick="setGender('ولد')">🙋‍♂️ ولد</button>
-      <button onclick="setGender('بنت')">🙋‍♀️ بنت</button>
-    </div>
-  `;
-}
-function setGender(g) {
-  gender = g;
-  renderResult();
-}
-function getTopTrait() {
-  let top = null, max = -1;
-  for (const t in scores) {
-    if (scores[t] > max) { max = scores[t]; top = t; }
-  }
-  return top;
-}
-const traitInfo = {
-  "عصبي": {
-    emoji: "🔥",
-    title: "شخصية نارية",
-    text: "انت شخص عنيف الانفعال شوية، بتاخد الأمور بجدية زيادة وبتتعصب بسرعة. بس الحلو إنك واضح ومباشر، محدش بيتلخبط معاك."
-  },
-  "هادئ": {
-    emoji: "🧘",
-    title: "شخصية هادئة",
-    text: "انت شخص متزن وبتفكر قبل ما ترد فعل. بتاخد الأمور بعقلانية وده بيخليك مصدر راحة للي حواليك."
-  },
-  "مزاجي": {
-    emoji: "🎭",
-    title: "شخصية مزاجية",
-    text: "مزاجك بيتغير بسرعة وبتتأثر بأي حاجة بتحصلك. اللي حواليك لازم يعرفوا يمسكوا التايمنج الصح معاك."
-  },
-  "طيب": {
-    emoji: "💛",
-    title: "شخصية طيبة",
-    text: "قلبك أبيض وبتفكر في اللي حواليك قبل نفسك. الناس بتحبك بسبب طيبتك، بس خد بالك متتستغلش."
-  },
-  "استمتاعي": {
-    emoji: "🎉",
-    title: "شخصية استمتاعية",
-    text: "شعارك في الحياة استمتع دلوقتي وفكر بعدين. بتحول أي موقف لفرصة ضحك واستمتاع، وده بيخفف عن اللي حواليك."
-  }
-};
-function renderResult() {
-  const top = getTopTrait();
-  const info = traitInfo[top];
-  const isBoy = gender === 'ولد';
-  const mrText = isBoy
-    ? "مستر محمد بيقولك: يا ابني انت اهبل 😂🤝"
-    : "مستر محمد بيقولك: يا بنتي انتي هبلة 😂🤝";
-  card.innerHTML = `
-    <div class="result-emoji">${info.emoji}</div>
-    <div class="result-title">${info.title}</div>
-    <div class="result-text">${info.text}</div>
-    <div class="mr-mohamed">${mrText}<br><span style="font-size:0.85em; font-weight:normal;">(الاختبار ده للفشخرة بس، متزعلش 😅)</span></div>
-    <button class="restart" onclick="renderStart()">جرب تاني</button>
-  `;
-}
-renderStart();
+document.getElementById('filterDownload').addEventListener('click', ()=>{
+  const link = document.createElement('a');
+  link.download = 'صورتي-استوديو-مستر-محمد.png';
+  link.href = filterCanvas.toDataURL('image/png');
+  link.click();
+});
 </script>
 </body>
 </html>
